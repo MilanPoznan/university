@@ -1,0 +1,248 @@
+/*************************************
+* Body, html and other global styles *
+*************************************/
+
+// Default typography styles for the site
+
+body {
+    font-family: 'dinn-next-regular';
+    line-height: 1.4;
+    background-color: red;
+}
+em {
+    font-family: 'dinn-next-regular';
+}
+h1, h2, h3, h4, h5 {
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+}
+
+p {
+    font-family: 'dinn-next-regular';
+    color: $light-black;
+    font-size: 14px;
+}
+.small {
+    font-family: 'dinn-next-regular';
+    color: $light-black;
+    font-size: 14px;
+}
+// class for a page content site-wide and  for the purpose of WYSIWYG editor
+#content, .content {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'dinn-next-regular';
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+    h2 {
+        font-size: 24px;
+        line-height: 29px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    h4 {
+        font-size: 16px;
+    }
+    h5 {
+        font-size: 12px;
+    }
+    em {
+        font-family: 'dinn-next-regular';
+    }
+    strong {
+        font-family: 'dinn-next-regular';
+    }
+    p {
+        margin-bottom: 16px;
+    }
+    blockquote {
+        position: relative;
+        display:block;
+        margin: 0 0 20px;
+        padding: 15px 20px 15px 45px;
+        background-color: $white;
+        font-family: 'dinn-next-regular';
+        font-size: 16px;
+        line-height: 1.2;
+        color: #666;
+        text-align: justify;
+        border-left: 15px solid $light-blue;
+        border-right: 2px solid $light-blue;
+        box-shadow: 2px 2px 15px #ccc;
+
+        &::before{
+            content: "\201C"; /*Unicode for Left Double Quote*/
+            font-family: 'dinn-next-regular';
+            font-size: 60px;
+            font-weight: bold;
+            color: #999;
+
+            position: absolute;
+            left: 10px;
+            top:5px;
+        }
+        &:after{
+            content: "";
+        }
+        em{
+          font-style: italic;
+        }
+        a {
+            text-decoration: none;
+            background: #eee;
+            cursor: pointer;
+            padding: 0 3px;
+            color: $light-blue;
+            &:hover{
+             color: #666;
+            }
+        }
+    }
+}
+//What we do and Environment and Society pages
+#specific-page-content {
+    h2 {
+        font-size: 29px;
+        line-height: 22px;
+    }
+}
+
+// Prevent scroll
+.no-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+// View more link with arrow right
+.view-more {
+    font-family: 'dinn-next-regular';
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 40px;
+    &--white, &--black {
+        background-size: 24px 8px;
+        background-repeat: no-repeat;
+        background-position: center right;
+    }
+    &--white {
+        color: $white;
+        background-image:url("assets/img/link_arrow_black.svg");
+    }
+    &--black {
+        color: $light-black;
+        background-image:url("assets/img/link_arrow_black.svg");
+    }
+}
+
+// Wrapper used for inner sections
+.inner-wrapper {
+    max-width:1420px;
+    margin: 0 25px;
+}
+
+// Wrapper used for hero and mid-hero sections
+.hero__wrapper {
+    width: 100%;
+}
+// Button styles
+.btn-submit, .btn-file, .btn-apply {
+    line-height: 19px;
+}
+
+.btn-submit {
+    width: 230px;
+    height: 60px;
+    background: $light-green;
+}
+
+.btn-file {
+    width: 184px;
+    height: 46px;
+    background: $gray;
+}
+
+.btn-apply {
+    width: 120px;
+    height: 38px;
+    background: $light-blue;
+    color: $white;
+    margin: auto;
+    border: none;
+}
+// !end button styles
+
+a {
+    font-family: 'dinn-next-regular';
+    font-size: 16px;
+    color: $light-blue;
+}
+
+// image to background helper class
+img[class$="-imgtobg"] {
+    display: none;
+}
+
+@include tablet() {
+    .content, #content {
+        .inner-wrapper {
+            margin: 0 30px;
+        }
+        h1 {
+            font-size: 50px;
+        }
+
+        h2 {
+            font-size: 26px;
+            line-height: 32px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        h5 {
+            font-size: 16px;
+        }
+    }
+    #specific-page-content {
+        h2 {
+            font-size: 32px;
+        }
+    }
+}
+
+@include desktop() {
+    #content, .content {
+        font-size: 16px;
+        line-height: 1.4;
+        text-align: left;
+        .inner-wrapper {
+            margin: auto;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'dinn-next-regular';
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        h2 {
+            font-size: 34px;
+            line-height: 42px;
+        }
+        .small {
+            font-size: 16px;
+        }
+    }
+}
