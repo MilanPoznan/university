@@ -16,8 +16,8 @@ class GMap {
 
     // vars
     var args = {
-      zoom    : 16,
-      center    : new google.maps.LatLng(0, 0),
+      zoom    : 25,
+      center    : new google.maps.LatLng(44.813, 20.450),
       mapTypeId : google.maps.MapTypeId.ROADMAP
     };
 
@@ -36,7 +36,7 @@ class GMap {
 
     // center map
     this.center_map( map );
-  
+
     } // end new_map
 
     add_marker( $marker, map ) {
@@ -88,7 +88,7 @@ class GMap {
     {
       // set center of map
         map.setCenter( bounds.getCenter() );
-        map.setZoom( 16 );
+        map.setZoom( 26 );
     }
     else
     {
